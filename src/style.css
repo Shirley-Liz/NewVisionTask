@@ -1,0 +1,116 @@
+﻿body {
+   background-color:purple
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.circle {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 2px dotted yellow;
+}
+
+.outer-circle {
+    border-width: 4px;
+}
+
+.inner-circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ball-white {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: orbit 4s infinite linear;
+}
+.ball-green {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: orbit 4s infinite linear;
+}
+.ball-yellow {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    animation: orbit 4s infinite linear;
+}
+.ball-red {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: orbit 4s infinite linear;
+}
+
+@keyframes orbit-outer {
+    0% {
+        transform: rotate(0deg) translateX(200px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit-inner {
+    0% {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+.red {
+    background-color: red;
+    top: 50%;
+    left: calc(50% - 10px);
+    transform-origin: 0% 50%;
+    animation: orbit-outer 4s infinite linear;
+    animation-delay: -4s;
+}
+
+.white {
+    background-color: white;
+    bottom: calc(50% - 10px);
+    left: 50%;
+    transform-origin: 50% 100%;
+    animation: orbit-outer 4s infinite linear;
+    animation-delay: -3s;
+}
+
+.yellow {
+    background-color: yellow;
+    top: 50%;
+    left: calc(50% - 10px);
+    transform-origin: 100% 50%;
+    animation: orbit-inner 4s infinite linear;
+    animation-delay: -2s;
+}
+
+.green {
+    background-color: green;
+    top: calc(50% - 10px);
+    right: 50%;
+    transform-origin: 50% 0%;
+    animation: orbit-inner 4s infinite linear;
+    animation-delay: -1s;
+}
+
